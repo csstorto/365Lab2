@@ -132,6 +132,15 @@ def g_query(query_args, students, teachers):
                         % (worst_student[STLASTNAME], worst_student[STFIRSTNAME],
                         lowest_gpa, teacher[TLASTNAME],
                         teacher[TFIRSTNAME], worst_student[BUS]))
+            elif query_args[1] is "T":
+                #TODO: Get rid of duplicate teachers. Probably an easy way to do so
+                total_teachers = []
+                for student in students:
+                    if int(student[GRADE]) == grade:
+                        for teacher in get_teachers_by_classroom(teachers, student[CLASSROOM]):
+                            total_teachers.append(teacher)
+                for teacher in total_teachers:
+                    print("%s %s %s" % (teacher[TLASTNAME], teacher[TFIRSTNAME], teacher[TCLASSROOM]))
             else:
                 print_bad_query_msg()
         else:
@@ -172,16 +181,26 @@ def i_query(students):
         print("%d: %d" % (grade, grade_array[grade]))
 
 def c_query(query_args, students, teachers):
-    print("TODO")
+    if len(query_args) is 1:
+        for student in students:
+            if student[CLASSROOM] == query_args[0]:
+                #TODO print more info
+                print("%s %s" % (student[STLASTNAME], student[STFIRSTNAME]))
+    elif len(query_args) == 2 and query_args[1] == "T":
+        for teacher in get_teachers_by_classroom(teachers, query_args[0]):
+            print("%s %s" % (teacher[TLASTNAME], teacher[TFIRSTNAME]))
+    else:
+        print_bad_query_msg()
 
 def print_bad_query_msg(*args):
     print("Usage:")
     print("  S[tudent]: <lastname> [B[us]]")
     print("  T[eacher]: <lastname>")
     print("  B[us]: <number>")
-    print("  G[rade]: <number> [H[igh]|L[ow]]")
+    print("  G[rade]: <number> [H[igh]|L[ow]|T[eachers]]")
     print("  A[verage]: <number>")
     print("  I[nfo]")
+    print("  C[lassroom]: <number> [T[eachers]]")
     print("  Q[uit]")
 
 def get_user_input():
