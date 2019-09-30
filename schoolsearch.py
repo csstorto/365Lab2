@@ -46,7 +46,9 @@ def parse_query(query_type, query_args, students, teachers):
         "G":g_query,
         "GRADE":g_query,
         "A":a_query,
-        "AVERAGE":a_query
+        "AVERAGE":a_query,
+        "C":c_query,
+        "CLASSROOM":c_query
     }
     parsing_function = query_type_dict.get(query_type, print_bad_query_msg)
     parsing_function(query_args, students, teachers)
@@ -56,11 +58,11 @@ def s_query(query_args, students, teachers):
         last_name = query_args[0]
         for student in students:
             if student[0] == last_name:
-                teacher = get_teacher_by_classroom(teachers, student[CLASSROOM])
+                teachers = get_teachers_by_classroom(teachers, student[CLASSROOM])
                 print("%s, %s, %s, %s, %s, %s"
                     % (student[STLASTNAME], student[STFIRSTNAME],
-                    student[GRADE], student[CLASSROOM], teacher[TLASTNAME],
-                    teacher[TFIRSTNAME]))
+                    student[GRADE], student[CLASSROOM], teachers[0][TLASTNAME],
+                    teachers[0][TFIRSTNAME]))
     elif len(query_args) is 2 and query_args[1] is ("B" or "BUS"):
         last_name = query_args[0]
         for student in students:
@@ -111,10 +113,10 @@ def g_query(query_args, students, teachers):
                             highest_gpa = float(student[GPA])
                             top_student = student
                 if top_student:
-                    teacher = get_teacher_by_classroom(teachers, top_student[CLASSROOM])
+                    teachers = get_teachers_by_classroom(teachers, top_student[CLASSROOM])
                     print("%s, %s, %.2f, %s, %s, %s"
                         % (top_student[STLASTNAME], top_student[STFIRSTNAME],
-                        highest_gpa, teacher[TLASTNAME], teacher[TFIRSTNAME],
+                        highest_gpa, teachers[0][TLASTNAME], teachers[0][TFIRSTNAME],
                         top_student[BUS]))
             elif query_args[1] is ("L" or "LOW"):
                 lowest_gpa = float(4.0)
@@ -169,6 +171,9 @@ def i_query(students):
     for grade in range(NUM_GRADES):
         print("%d: %d" % (grade, grade_array[grade]))
 
+def c_query(query_args, students, teachers):
+    print("TODO")
+
 def print_bad_query_msg(*args):
     print("Usage:")
     print("  S[tudent]: <lastname> [B[us]]")
@@ -182,11 +187,15 @@ def print_bad_query_msg(*args):
 def get_user_input():
     return input("$ ").upper()
 
-def get_teacher_by_classroom(teachers, classroom):
+def get_teachers_by_classroom(teachers, classroom):
+    res = []
     for teacher in teachers:
         if teacher[TCLASSROOM] == classroom:
-            return teacher
-    print("Bad classroom value provided: " + classroom)
+            res.append(teacher)
+    if len(res) is 0:
+        print("No teachers found for given classroom!")
+    else:
+        return res
 
 def get_file_as_array(filename):
     try:
