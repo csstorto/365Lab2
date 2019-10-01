@@ -133,11 +133,11 @@ def g_query(query_args, students, teachers):
                             lowest_gpa = float(student[GPA])
                             worst_student = student
                 if worst_student:
-                    teacher = get_teacher_by_classroom(teachers, worst_student[CLASSROOM])
+                    teachers = get_teachers_by_classroom(teachers, worst_student[CLASSROOM])
                     print("%s, %s, %.2f, %s, %s, %s"
                         % (worst_student[STLASTNAME], worst_student[STFIRSTNAME],
-                        lowest_gpa, teacher[TLASTNAME],
-                        teacher[TFIRSTNAME], worst_student[BUS]))
+                        lowest_gpa, teachers[0][TLASTNAME],
+                        teachers[0][TFIRSTNAME], worst_student[BUS]))
             elif query_args[1] is "T":
                 #TODO: Get rid of duplicate teachers. Probably an easy way to do so
                 total_teachers = []
