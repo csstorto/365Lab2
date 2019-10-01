@@ -77,9 +77,15 @@ def t_query(query_args, students, teachers):
         print_bad_query_msg()
 
     last_name = query_args[0]
-    for student in students:
-        if student[TLASTNAME] == last_name:
-            print("%s, %s" % (student[STLASTNAME], student[STFIRSTNAME]))
+    classroom = None
+    for teacher in teachers:
+        if teacher[TLASTNAME] == last_name:
+            classroom = teacher[TCLASSROOM]
+            break
+    if classroom:
+        for student in students:
+            if student[CLASSROOM] == classroom:
+                print("%s, %s" % (student[STLASTNAME], student[STFIRSTNAME]))
 
 def b_query(query_args, students, teachers):
     if len(query_args) is not 1:
