@@ -144,7 +144,8 @@ def g_query(query_args, students, teachers):
                 for student in students:
                     if int(student[GRADE]) == grade:
                         for teacher in get_teachers_by_classroom(teachers, student[CLASSROOM]):
-                            total_teachers.append(teacher)
+                            if teacher not in total_teachers:
+                                total_teachers.append(teacher)
                 for teacher in total_teachers:
                     print("%s %s %s" % (teacher[TLASTNAME], teacher[TFIRSTNAME], teacher[TCLASSROOM]))
             else:
@@ -215,7 +216,7 @@ def get_user_input():
 def get_teachers_by_classroom(teachers, classroom):
     res = []
     for teacher in teachers:
-        if teacher[TCLASSROOM] == classroom:
+        if teacher[TCLASSROOM] == classroom and teacher not in res:
             res.append(teacher)
     if len(res) is 0:
         print("No teachers found for given classroom!")
