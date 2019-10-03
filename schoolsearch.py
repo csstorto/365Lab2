@@ -13,8 +13,6 @@ TCLASSROOM = 2
 
 NUM_GRADES = 7
 
-from collections import defaultdict
-
 def main():
     students = get_file_as_array("list.txt")
     teachers = get_file_as_array("teachers.txt")
@@ -26,6 +24,8 @@ def main():
         if len(split_inp) is not 2:
             if split_inp[0] in ["I", "INFO"]:
                 i_query(students)
+            elif split_inp[0] in ["E", "ENROLLMENT"]:
+                e_query(students, teachers)
             else:
                 print_bad_query_msg()
         else:
@@ -199,6 +199,15 @@ def c_query(query_args, students, teachers):
     else:
         print_bad_query_msg()
 
+def e_query(students, teachers):
+    enrolled = {}
+    for teacher in teachers:
+        enrolled[teacher[2]] = 0
+    for student in students:
+        enrolled[student[3]] += 1
+    for classroom in enrolled.keys():
+        print(classroom, ": ", enrolled[classroom])
+
 def print_bad_query_msg(*args):
     print("Usage:")
     print("  S[tudent]: <lastname> [B[us]]")
@@ -208,6 +217,7 @@ def print_bad_query_msg(*args):
     print("  A[verage]: <number>")
     print("  I[nfo]")
     print("  C[lassroom]: <number> [T[eachers]]")
+    print("  E[nrollment]")
     print("  Q[uit]")
 
 def get_user_input():
