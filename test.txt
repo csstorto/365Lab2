@@ -1,0 +1,148 @@
+// CSC 365. Fall 2019
+// Team members: Cameron Storton, Zachary Richardson, Weston Gilmore
+// Lab 1-1 test suite
+
+// TC-1
+// Tests Requirements R3, R4
+// student query, existing student
+// expected output: HAVIR, BOBBIE, 2, 108, HAMER, GAVIN
+
+S: HAVIR
+
+// TC-2
+// Tests Requirements R3, R4
+// student query, non-existent student
+// expected output: <empty line>
+
+S: NEMO
+
+// TC-3
+// Tests Requirements R3, R5
+// student bus query, existing student
+// expected output: COMO, ZANDRA, 53
+
+S: COMO B
+
+// TC-4
+// Tests Requirements R3, R5
+// student bus qery, non-existent student
+// expected output: <empty line>
+
+S: BLAH B
+
+// TC-5
+// Tests Requirements R3, R6
+// teacher query, existing teacher
+// expected output:
+      SCHOENECKER, PHUONG
+      CLECKLER, FLOY
+      KRAKE, VALENTIN
+      CREMEANS, RANDOLPH
+      KREESE, CARRIE   
+
+T: GAMBREL
+
+// TC-6
+// Tests Requirements R3, R7
+// grade query, grade with people
+// expected output:
+      SAELEE, DANILO
+      GARTH, JOHN
+
+G: 1
+
+// TC-7
+// Tests Requirements R3, R7
+// grade query, empty grade
+// expected output: <empty line>
+
+G: 0
+
+// TC-8
+// Tests Requirements R3, R8
+// bus query
+// expected output:
+      SWEDLUND, SHARRI, 3, 107
+      ZAPPAVIGNA, ELLIOTT, 6, 106
+      SAENPHIMMACHA, NUMBERS, 6, 111
+      BOYTER, WAN, 6, 102
+      KOZOLA, BUSTER, 2, 108
+      DEMARTINI, DEWAYNE, 6, 102
+      BEX, TAMESHA, 4, 105
+      WERST, LEON, 6, 111
+      LAMKIN, TAMA, 6, 111
+
+B: 55
+
+// TC-9
+// Tests Requirements R3, R9
+// high grade query
+// expected output: LAMKIN, TAMA, 3.23, NISTENDIRK, NANCY, 55
+
+G: 6 H
+
+// TC-10
+// Tests Requirements R3, R9
+// low grade query
+// expected output: KRAKE, VALENTIN, 2.78, GAMBREL, JAE, 56
+
+G: 6 L
+
+// TC-11
+// Tests Requirements R3, R10
+// average query
+// expected output: 4, 2.95
+
+A: 4
+
+// TC-12
+// Tests Requirements R3, R11
+// info query
+// expected output:
+      0: 0
+      1: 2
+      2: 13
+      3: 9
+      4: 15
+      5: 0
+      6: 21 
+
+I
+
+// TC-13
+// Tests Requirement E1
+// bad grade query
+// expected output:
+Usage:
+  S[tudent]: <lastname> [B[us]]
+  T[eacher]: <lastname>
+  B[us]: <number>
+  G[rade]: <number> [H[igh]|L[ow]]
+  A[verage]: <number>
+  I[nfo]
+  Q[uit] 
+
+G: asdf
+
+// TC-14
+// Tests Requirement E1
+// bad query
+// expected output:
+Usage:
+  S[tudent]: <lastname> [B[us]]
+  T[eacher]: <lastname>
+  B[us]: <number>
+  G[rade]: <number> [H[igh]|L[ow]]
+  A[verage]: <number>
+  I[nfo]
+  Q[uit] 
+
+blah blah blah
+
+// TC-15
+// Tests Requirements R3, R12
+// quit command
+// expected output:
+// <program terminates>
+
+Q

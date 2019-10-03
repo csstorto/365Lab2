@@ -48,7 +48,9 @@ def parse_query(query_type, query_args, students, teachers):
         "A":a_query,
         "AVERAGE":a_query,
         "C":c_query,
-        "CLASSROOM":c_query
+        "CLASSROOM":c_query,
+        "N":n_query,
+        "ANALYZE":n_query
     }
     parsing_function = query_type_dict.get(query_type, print_bad_query_msg)
     parsing_function(query_args, students, teachers)
@@ -139,7 +141,6 @@ def g_query(query_args, students, teachers):
                         lowest_gpa, teachers[0][TLASTNAME],
                         teachers[0][TFIRSTNAME], worst_student[BUS]))
             elif query_args[1] is "T":
-                #TODO: Get rid of duplicate teachers. Probably an easy way to do so
                 total_teachers = []
                 for student in students:
                     if int(student[GRADE]) == grade:
@@ -191,7 +192,6 @@ def c_query(query_args, students, teachers):
     if len(query_args) is 1:
         for student in students:
             if student[CLASSROOM] == query_args[0]:
-                #TODO print more info
                 print("%s %s" % (student[STLASTNAME], student[STFIRSTNAME]))
     elif len(query_args) == 2 and query_args[1] == "T":
         for teacher in get_teachers_by_classroom(teachers, query_args[0]):
@@ -207,6 +207,18 @@ def e_query(students, teachers):
         enrolled[student[3]] += 1
     for classroom in enrolled.keys():
         print(classroom, ": ", enrolled[classroom])
+
+def n_query(query_args, students, teachers):
+    if len(query_args) is not 1:
+        print_bad_query_msg()
+    elif query_args[0] in ["G", "GRADE"]:
+        print("TODO")
+    elif query_args[0] in ["T", "TEACHER"]:
+        print("TODO")
+    elif query_args[0] in ["B", "BUS"]:
+        print("TODO")
+    else:
+        print_bad_query_msg()
 
 def print_bad_query_msg(*args):
     print("Usage:")
