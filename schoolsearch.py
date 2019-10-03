@@ -209,7 +209,7 @@ def e_query(students, teachers):
         print(classroom, ": ", enrolled[classroom])
 
 def n_query(query_args, students, teachers):
-    if len(query_args) is not 1:
+    if len(query_args) is not 2:
         print_bad_query_msg()
     elif query_args[0] in ["G", "GRADE"]:
         print("TODO")
@@ -230,6 +230,7 @@ def print_bad_query_msg(*args):
     print("  I[nfo]")
     print("  C[lassroom]: <number> [T[eachers]]")
     print("  E[nrollment]")
+    print("  [A]N[alyze]: [G[rade]|T[eacher]|B[us]] <number|lastname>")
     print("  Q[uit]")
 
 def get_user_input():
