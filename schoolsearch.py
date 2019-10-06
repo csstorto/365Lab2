@@ -212,11 +212,43 @@ def n_query(query_args, students, teachers):
     if len(query_args) is not 2:
         print_bad_query_msg()
     elif query_args[0] in ["G", "GRADE"]:
-        print("TODO")
+        num_gpas = 0
+        gpa_sum = 0.0
+        try:
+            grade = int(query_args[1])
+            for student in students:
+                if int(student[GRADE]) == grade:
+                    num_gpas += 1
+                    gpa_sum += float(student[GPA])
+            average_gpa = gpa_sum / num_gpas if num_gpas > 0 else 0.0
+            print("Average GPA for Grade %d: %.2f" % (grade, average_gpa))
+        except ValueError:
+            print("Please provide an integer as a grade. Given %s" % (query_args[1]))
     elif query_args[0] in ["T", "TEACHER"]:
-        print("TODO")
+        num_gpas = 0
+        gpa_sum = 0.0
+        for teacher in teachers:
+            if teacher[TLASTNAME] == query_args[1]:
+                for student in students:
+                    if student[CLASSROOM] == teacher[TCLASSROOM]:
+                        num_gpas += 1
+                        gpa_sum += float(student[GPA])
+        average_gpa = gpa_sum / num_gpas
+        print("Average GPA for Teacher %s: %.2f" % (query_args[1], average_gpa))
+
     elif query_args[0] in ["B", "BUS"]:
-        print("TODO")
+        num_gpas = 0
+        gpa_sum = 0.0
+        try:
+            bus = int(query_args[1])
+            for student in students:
+                if int(student[BUS]) == bus:
+                    num_gpas += 1
+                    gpa_sum += float(student[GPA])
+            average_gpa = gpa_sum / num_gpas if num_gpas > 0 else 0.0
+            print("Average GPA for Bus %d: %.2f" % (bus, average_gpa))
+        except ValueError:
+            print("Please provide an integer as a bus number. Given %s" % (query_args[1]))
     else:
         print_bad_query_msg()
 
@@ -230,7 +262,7 @@ def print_bad_query_msg(*args):
     print("  I[nfo]")
     print("  C[lassroom]: <number> [T[eachers]]")
     print("  E[nrollment]")
-    print("  [A]N[alyze]: [G[rade]|T[eacher]|B[us]] <number|lastname>")
+    print("  [A]N[alyze]: <G[rade]|T[eacher]|B[us]> <number|lastname>")
     print("  Q[uit]")
 
 def get_user_input():
