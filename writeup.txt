@@ -4,22 +4,25 @@ Team members: Cameron Storton, Zachary Richardson, Weston Gilmore
 Initial decisions: Programmed in python3 using vim
 
 Internal architecture: We used a 2-D array to hold the parsed students.txt and
-  teachers.txt files to eliminate the need to read in the text files every time, 
+  teachers.txt files to eliminate the need to read in the text files every time,
   saving considerable processing. A dictionary was used to hold the valid types of
   queries, with the dictionary value corresponding to the query handling
-  function.
+  function. A function was added to allow for easy teacher querying given a classroom
+  number, which allowed for our existing code to still be viable once this new function
+  was inserted.
 
 Task log:
-  Adding new queries: Zachary Richardson 40 minutes
-  Updating old queries: Zachary Richardson, 20 minutes
-  Error checking: Zachary Richardson, 10 minutes; Weston Gilmore, 20 minutes
-  Writing tests: Zachary Richardson 20 minutes; Weston Gilmore, 20 minutes
-  Writeup: Zachary Richardson, 10 minutes; Weston Gilmore, 10 minutes 
+
+  Adding new queries: Zachary Richardson 40 minutes; Cameron Storton 1 hour 15 minutes
+  Updating old queries: Zachary Richardson, 20 minutes; Cameron Storton 30 minutes
+  Error checking: Zachary Richardson, 10 minutes; Cameron Storton 5 minutes; Weston Gilmore, 20 minutes
+  Writing tests: Zachary Richardson 20 minutes; Cameron Storton 10 minutes; Weston Gilmore, 20 minutes
+  Writeup: Zachary Richardson, 10 minutes; Cameron Storton, 5 minutes; Weston Gilmore, 10 minutes 
 
 Notes on testing:
   After parsing and storing the new data files, the first goal was to overhaul
-  the program such that it would pass our previous lab's tests. After this was 
-  completed, we began designing tests for the new requirements. 
+  the program such that it would pass our previous lab's tests. After this was
+  completed, we began designing tests for the new requirements.
 
-Final Notes: 
+Final Notes:
   The program works correctly with all inputs.
