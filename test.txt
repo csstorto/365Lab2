@@ -184,6 +184,27 @@ C: 101 T
 E
 
 // TC-19
+// Tests Requirement NR5
+// gpa analysis by grade
+// expected output: Average GPA for Grade 2: 2.95
+
+N: G 2
+
+// TC-20
+// Tests Requirement NR5
+// gpa analysis by bus
+// expected output: Average GPA for Bus 53: 3.06
+
+N: B 53
+
+// TC-21
+// Tests Requirement NR5
+// gpa analysis by teacher
+// expected output: Average GPA for Teacher FAFARD: 3.01
+
+N: T FAFARD
+
+// TC-22
 // Tests Requirements R3, R12
 // quit command
 // expected output:
