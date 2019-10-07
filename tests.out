@@ -1,0 +1,100 @@
+Script started on Mon Oct  7 13:16:17 2019
+[1m[7m%[27m[1m[0m                                                                                                         
+ 
+]2;zack@Zacharys-MacBook-Pro: ~/git/365Lab2]1;~/git/365Lab2
+[0m[27m[24m[J[39m[0m[49m[40m[39m zack@Zacharys-MacBook-Pro [44m[30m[30m ~/git/365Lab2 [43m[34m[30m  master ● [49m[33m[39m [K[?1h=[?2004h[1m[31mp[0m[39m[90mython3 schoolsearch.py[39m[22D[1m[31mp[1m[31my[0m[39m[1m[31mp[1m[31my[1m[31mt[0m[39m[1m[31mt[1m[31mh[0m[39m[1m[31mh[1m[31mo[0m[39m[0m[32mp[0m[32my[0m[32mt[0m[32mh[0m[32mo[32mn[39m[32mn[32m3[39m[39m [39m[4ms[39m[4mc[39m[4mh[39m[4mo[39m[4mo[39m[4ml[39m[4ms[39m[4me[39m[4ma[39m[4mr[39m[4mc[39m[4mh[39m[4m.[39m[4mp[39m[4my[24m[?1l>[?2004l
+
+]2;python3 schoolsearch.py]1;python3$ SH : HAVIR
+HAVIR, BOBBIE, 2, 108, HAMER, GAVIN
+$ S: NEMO
+$ S: COMO B
+COMO, ZANDRA, 53
+$ S: BLAH B
+$ T: GAMBREL
+SCHOENECKER, PHUONG
+CLECKLER, FLOY
+KRAKE, VALENTIN
+CREMEANS, RANDOLPH
+KREESE, CARRIE
+$ B: 55
+SWEDLUND, SHARRI, 3, 107
+ZAPPAVIGNA, ELLIOTT, 6, 106
+SAENPHIMMACHA, NUMBERS, 6, 111
+BOYTER, WAN, 6, 102
+KOZOLA, BUSTER, 2, 108
+DEMARTINI, DEWAYNE, 6, 102
+BEX, TAMESHA, 4, 105
+WERST, LEON, 6, 111
+LAMKIN, TAMA, 6, 111
+$ G: 1
+SAELEE, DANILO
+GARTH, JOHN
+$ G: ) 0
+$ G: 6 H
+LAMKIN, TAMA, 3.23, NISTENDIRK, NANCY, 55
+$ G: 6 L
+KRAKE, VALENTIN, 2.78, GAMBREL, JAE, 56
+$ G: 6 T
+GAMBREL JAE 109
+KERBS BENITO 102
+NISTENDIRK NANCY 111
+BODZIONY LUZ 106
+$ A: 4
+4, 2.95
+$ I
+0: 0
+1: 2
+2: 13
+3: 9
+4: 15
+5: 0
+6: 21
+$ G: asdf
+G[rade] takes a valid integer, not ASDF
+Usage:
+  S[tudent]: <lastname> [B[us]]
+  T[eacher]: <lastname>
+  B[us]: <number>
+  G[rade]: <number> [H[igh]|L[ow]|T[eachers]]
+  A[verage]: <number>
+  I[nfo]
+  C[lassroom]: <number> [T[eachers]]
+  E[nrollment]
+  [A[N]alyze]: <G[rade]|T[eacher]|B[us]> <number|lastname>
+  Q[uit]
+$ blah blah blah
+Usage:
+  S[tudent]: <lastname> [B[us]]
+  T[eacher]: <lastname>
+  B[us]: <number>
+  G[rade]: <number> [H[igh]|L[ow]|T[eachers]]
+  A[verage]: <number>
+  I[nfo]
+  C[lassroom]: <number> [T[eachers]]
+  E[nrollment]
+  [A[N]alyze]: <G[rade]|T[eacher]|B[us]> <number|lastname>
+  Q[uit]
+$ C: 101
+DURAND CARLEE
+$ C: 101 T
+COOL REUBEN
+$ E
+101 :  1
+102 :  5
+103 :  2
+104 :  2
+105 :  6
+106 :  2
+107 :  7
+108 :  11
+109 :  5
+110 :  2
+111 :  9
+112 :  8
+$ N: G 2
+Average GPA for Grade 2: 2.95
+$ N: B 53
+Average GPA for Bus 53: 3.06
+$ N: T FAFARD
+Average GPA for Teacher FAFARD: 3.01
+$ Q
