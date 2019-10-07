@@ -43,22 +43,6 @@ S: BLAH B
 T: GAMBREL
 
 // TC-6
-// Tests Requirements R3, R7
-// grade query, grade with people
-// expected output:
-      SAELEE, DANILO
-      GARTH, JOHN
-
-G: 1
-
-// TC-7
-// Tests Requirements R3, R7
-// grade query, empty grade
-// expected output: <empty line>
-
-G: 0
-
-// TC-8
 // Tests Requirements R3, R8
 // bus query
 // expected output:
@@ -73,6 +57,22 @@ G: 0
       LAMKIN, TAMA, 6, 111
 
 B: 55
+
+// TC-7
+// Tests Requirements R3, R7
+// grade query, grade with people
+// expected output:
+      SAELEE, DANILO
+      GARTH, JOHN
+
+G: 1
+
+// TC-8
+// Tests Requirements R3, R7
+// grade query, empty grade
+// expected output: <empty line>
+
+G: 0
 
 // TC-9
 // Tests Requirements R3, R9
@@ -184,9 +184,34 @@ C: 101 T
 E
 
 // TC-19
-// Tests Requirements R3, R12
+// Tests Requirements R3, R13
 // quit command
 // expected output:
 // <program terminates>
 
 Q
+
+// TC-20
+// Tests Requirements R3, NR5
+// quit command
+// expected output:
+// Average GPA for Grade 4: 2.95
+
+N: G 4
+
+// TC-21
+// Tests Requirements R3, NR5
+// quit command
+// expected output:
+// Average GPA for Teacher GAMBREL: 2.96
+
+N: T Gambrel
+
+// TC-22
+// Tests Requirements R3, NR5
+// quit command
+// expected output:
+// Average GPA for Bus 52: 2.88
+
+N: B 52
+

@@ -12,9 +12,9 @@ Internal architecture: We used a 2-D array to hold the parsed students.txt and
 Task log:
   Adding new queries: Zachary Richardson 40 minutes
   Updating old queries: Zachary Richardson, 20 minutes
-  Error checking: Zachary Richardson, 10 minutes
-  Writing tests: Zachary Richardson 20 minutes
-  Writeup: Zachary Richardson, 10 minutes
+  Error checking: Zachary Richardson, 10 minutes; Weston Gilmore, 20 minutes
+  Writing tests: Zachary Richardson 20 minutes; Weston Gilmore, 20 minutes
+  Writeup: Zachary Richardson, 10 minutes; Weston Gilmore, 10 minutes 
 
 Notes on testing:
   After parsing and storing the new data files, the first goal was to overhaul
