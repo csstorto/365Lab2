@@ -89,13 +89,24 @@ G: 6 H
 G: 6 L
 
 // TC-11
+// Tests Requirements R3, NR3
+// teacher grade query
+// expected output:
+      GAMBREL JAE 109
+      KERBS BENITO 102
+      NISTENDIRK NANCY 111
+      BODZIONY LUZ 106
+
+G: 6 T
+
+// TC-12
 // Tests Requirements R3, R10
 // average query
 // expected output: 4, 2.95
 
 A: 4
 
-// TC-12
+// TC-13
 // Tests Requirements R3, R11
 // info query
 // expected output:
@@ -109,7 +120,7 @@ A: 4
 
 I
 
-// TC-13
+// TC-14
 // Tests Requirement E1
 // bad grade query
 // expected output:
@@ -124,7 +135,7 @@ Usage:
 
 G: asdf
 
-// TC-14
+// TC-15
 // Tests Requirement E1
 // bad query
 // expected output:
@@ -139,7 +150,40 @@ Usage:
 
 blah blah blah
 
-// TC-15
+// TC-16
+// Tests Requirement NR1
+// classroom students
+// expected output: DURAND CARLEE
+
+C: 101
+
+// TC-17
+// Tests Requirement NR2
+// classroom teacher
+// expected output: COOL REUBEN
+
+C: 101 T
+
+// TC-18
+// Tests Requirement NR4
+// classroom students
+// expected output:
+      101 :  1
+      102 :  5
+      103 :  2
+      104 :  2
+      105 :  6
+      106 :  2
+      107 :  7
+      108 :  11
+      109 :  5
+      110 :  2
+      111 :  9
+      112 :  8
+
+E
+
+// TC-19
 // Tests Requirements R3, R12
 // quit command
 // expected output:
