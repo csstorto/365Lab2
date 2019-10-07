@@ -184,9 +184,6 @@ C: 101 T
 E
 
 // TC-19
-<<<<<<< HEAD
-// Tests Requirements R3, R13
-=======
 // Tests Requirement NR5
 // gpa analysis by grade
 // expected output: Average GPA for Grade 2: 2.95
@@ -209,34 +206,9 @@ N: T FAFARD
 
 // TC-22
 // Tests Requirements R3, R12
->>>>>>> f5cd4152a5dda84e5365148461b7f97f11fa9ae3
 // quit command
 // expected output:
 // <program terminates>
 
 Q
-
-// TC-20
-// Tests Requirements R3, NR5
-// quit command
-// expected output:
-// Average GPA for Grade 4: 2.95
-
-N: G 4
-
-// TC-21
-// Tests Requirements R3, NR5
-// quit command
-// expected output:
-// Average GPA for Teacher GAMBREL: 2.96
-
-N: T Gambrel
-
-// TC-22
-// Tests Requirements R3, NR5
-// quit command
-// expected output:
-// Average GPA for Bus 52: 2.88
-
-N: B 52
 
